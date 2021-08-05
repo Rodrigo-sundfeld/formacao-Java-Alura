@@ -9,24 +9,17 @@ public class testaMetodo {
 		System.out.println("O saldo da conta do Rodrigo é R$" + contaDoRodrigo.saldo);
 		boolean conseguiuRetirar = contaDoRodrigo.saca(20);
 		System.out.println("O novo saldo da conta do Rodrigo é R$" + contaDoRodrigo.saldo);
-		System.out.println("O saque foi realizado com sucesso? " + conseguiuRetirar );
+		System.out.println("O saque foi realizado com sucesso? " + conseguiuRetirar);
 		
 		Conta contaDoLucas = new Conta();
 		contaDoLucas.saldo = 10000;
 		contaDoLucas.deposita (800);
 		System.out.println("\n" + "O saldo da conta do Lucas é R$" + contaDoLucas.saldo);
-				
+		
 		Conta contaDaPriscilla = new Conta();
 		contaDaPriscilla.deposita(5000);
-		
-		if (contaDaPriscilla.transfere(11500, contaDoLucas)) {
-			System.out.println("Transferencia realizada com sucesso!");
-		} else {
-			System.out.println("Transferencia não realizada, saldo insuficiente!");
-		}
-		
-		System.out.println("\n" + "O saldo atual da conta da Prisilla é R$" + contaDaPriscilla.saldo);
-		System.out.println("O saldo da conta do Lucas é R$" + contaDoLucas.saldo);
+		contaDaPriscilla.transfere(500, contaDoLucas);
+		System.out.println("\n" + "O saldo atual da conta da Prisilla é R$" + contaDaPriscilla);
 	}
 
 }

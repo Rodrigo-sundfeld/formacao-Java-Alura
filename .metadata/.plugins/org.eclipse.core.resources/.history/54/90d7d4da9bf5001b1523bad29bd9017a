@@ -19,7 +19,7 @@ public class testaMetodo {
 		Conta contaDaPriscilla = new Conta();
 		contaDaPriscilla.deposita(5000);
 		
-		if (contaDaPriscilla.transfere(11500, contaDoLucas)) {
+		if (contaDaPriscilla.transfere(1500, contaDoLucas)) {
 			System.out.println("Transferencia realizada com sucesso!");
 		} else {
 			System.out.println("Transferencia não realizada, saldo insuficiente!");
