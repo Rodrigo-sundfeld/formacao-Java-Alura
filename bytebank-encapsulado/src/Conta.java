@@ -5,6 +5,19 @@ public class Conta {
 	private int agencia;
 	private int numero;
 	private Cliente titular;
+	private static int total;
+	
+	public static int getTotal() {
+		return Conta.total;
+	}
+	
+	public Conta(int agencia, int numero) {
+		Conta.total++;
+		//System.out.println("O total de contas é " + Conta.total);
+		this.agencia = agencia;
+		this.numero = numero;
+		//System.out.println("Conta numero " + this.numero + " pertecente a agência " + this.agencia + " criada com sucesso!");
+	}
 	
 	public void deposita(double valor) {
 		this.saldo += valor;
@@ -37,14 +50,30 @@ public class Conta {
 	}
 	
 	public void setNumero(int numero) {
+		if (numero <= 0) {
+			System.out.println("O número da agência deve ser maior que 0!");
+			return;
+		}
 		this.numero = numero;
 	}
 	
 	public int getAgencia() {
-		return this.agencia;
+		 return this.agencia;
 	}
 	
 	public void setAgencia(int agencia) {
+		if (numero <= 0) {
+			System.out.println("O número da agência dever ser maior que 0!");
+			return;
+		}
 		this.agencia = agencia;
+	}
+	
+	public Cliente getTitular() {
+		return titular;
+	}
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
 	}
 }
